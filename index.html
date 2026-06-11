@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>LUMINAIR | Ethereal Elegance</title>
+  <!-- Google Fonts & simple reset -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fefaf5;
+      color: #1e1b1a;
+      scroll-behavior: smooth;
+    }
+
+    /* unique branding: LUMINAIR — soft luxury + modern minimal */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* ========= HEADER ========= */
+    .site-header {
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      background: #fffdf9;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(2px);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-name {
+      font-size: 1.9rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #CA9E6E, #A57C52);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      letter-spacing: -0.5px;
+    }
+
+    .brand-sup {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: #b87c4b;
+      margin-left: 4px;
+      letter-spacing: 0.3px;
+    }
+
+    .tagline {
+      font-size: 0.8rem;
+      color: #8b6b4f;
+      font-weight: 400;
+      border-left: 1px solid #ecd9c6;
+      padding-left: 12px;
+      margin-left: 8px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #3e2c21;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #b87c4b;
+    }
+
+    .icon-group {
+      display: flex;
+      gap: 20px;
+    }
+
+    .icon-group span {
+      font-size: 1.3rem;
+      cursor: default;
+    }
+
+    /* hero section */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      padding: 60px 0 40px;
+    }
+
+    .hero-content {
+      flex: 1.2;
+    }
+
+    .hero-badge {
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      color: #c28a5c;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .hero-content h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      line-height: 1.2;
+      color: #2c221c;
+      margin-bottom: 20px;
+    }
+
+    .hero-highlight {
+      color: #CA9E6E;
+      border-bottom: 2px solid #efdbc9;
+    }
+
+    .hero-desc {
+      font-size: 1rem;
+      color: #5b4a3a;
+      max-width: 450px;
+      margin-bottom: 32px;
+      line-height: 1.5;
+    }
+
+    .btn-primary {
+      background-color: #1e1b1a;
+      border: none;
+      padding: 12px 32px;
+      font-weight: 600;
+      color: white;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: 0.25s;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .btn-primary:hover {
+      background-color: #CA9E6E;
+      transform: scale(0.98);
+    }
+
+    .hero-image {
+      flex: 1;
+      background: #f3ede7;
+      border-radius: 48px;
+      overflow: hidden;
+      box-shadow: 0 25px 35px -12px rgba(0,0,0,0.1);
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      transition: 0.3s;
+    }
+
+    /* Featured collection section */
+    .section-title {
+      font-size: 2rem;
+      font-weight: 600;
+      margin: 60px 0 24px 0;
+      position: relative;
+      display: inline-block;
+      color: #2c221c;
+    }
+
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 60%;
+      height: 3px;
+      background: #CA9E6E;
+      border-radius: 4px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 32px;
+      margin: 30px 0 40px;
+    }
+
+    .product-card {
+      background: #ffffff;
+      border-radius: 32px;
+      overflow: hidden;
+      transition: all 0.25s ease;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.02);
+      border: 1px solid #f5ede5;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.12);
+      border-color: #ecd9c6;
+    }
+
+    .product-img {
+      width: 100%;
+      aspect-ratio: 1 / 1.1;
+      object-fit: cover;
+      background: #faf3ec;
+    }
+
+    .product-info {
+      padding: 20px 16px 24px;
+    }
+
+    .product-category {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #b87c4b;
+      font-weight: 600;
+    }
+
+    .product-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 8px 0 6px;
+      color: #2c221c;
+    }
+
+    .product-price {
+      font-weight: 700;
+      color: #1e1b1a;
+      font-size: 1.1rem;
+      margin: 10px 0 8px;
+    }
+
+    .rating {
+      color: #e0aa7a;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+    }
+
+    /* banner / unique brand story */
+    .brand-story {
+      background: linear-gradient(112deg, #f8f0e8 0%, #fff6ef 100%);
+      border-radius: 48px;
+      padding: 48px 40px;
+      margin: 70px 0 60px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .story-text {
+      flex: 1.5;
+    }
+
+    .story-text h3 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: #2f241d;
+    }
+
+    .story-text p {
+      color: #5e4a38;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .story-img {
+      flex: 1;
+      border-radius: 32px;
+      overflow: hidden;
+      max-width: 280px;
+    }
+
+    .story-img img {
+      width: 100%;
+      border-radius: 28px;
+      display: block;
+    }
+
+    /* newsletter & footer */
+    .newsletter {
+      background: #1e1b1a;
+      border-radius: 48px;
+      padding: 48px 36px;
+      text-align: center;
+      margin: 40px 0 60px;
+    }
+
+    .newsletter h4 {
+      font-size: 1.8rem;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .newsletter p {
+      color: #e2cfbc;
+      margin-bottom: 24px;
+    }
+
+    .news-form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .news-form input {
+      flex: 2;
+      padding: 14px 20px;
+      border-radius: 60px;
+      border: none;
+      font-size: 0.9rem;
+      background: #fff;
+      outline: none;
+    }
+
+    .news-form button {
+      background: #CA9E6E;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 60px;
+      font-weight: 600;
+      color: #1e1b1a;
+      cursor: pointer;
+    }
+
+    footer {
+      border-top: 1px solid #ecd9c6;
+      padding: 40px 0 30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .footer-col p {
+      color: #5b4a3a;
+      font-size: 0.85rem;
+      margin-top: 12px;
+    }
+
+    .footer-col .brand-name {
+      font-size: 1.6rem;
+      background: linear-gradient(135deg, #CA9E6E, #A57C52);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 18px;
+      margin-top: 14px;
+    }
+
+    .social-icons span {
+      font-size: 1.3rem;
+      cursor: default;
+      color: #896d53;
+    }
+
+    /* mobile adjustments */
+    @media (max-width: 780px) {
+      .container {
+        padding: 0 20px;
+      }
+      .hero-content h1 {
+        font-size: 2.4rem;
+      }
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links {
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      .brand-story {
+        flex-direction: column;
+        text-align: center;
+      }
+      .story-img {
+        max-width: 220px;
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+      <span class="brand-name">LUMINAIR</span>
+      <span class="brand-sup">✦</span>
+      <div class="tagline">ethereal objects</div>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+    </div>
+    <div class="icon-group">
+      <span>🔍</span>
+      <span>👜</span>
+      <span>👤</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <!-- hero section -->
+    <div class="hero">
+      <div class="hero-content">
+        <div class="hero-badge">✦ limited edition no.04</div>
+        <h1>Where light meets <span class="hero-highlight">craft</span><br>and stillness.</h1>
+        <p class="hero-desc">Handmade pieces, sculptural decor, and aromatic rituals — LUMINAIR brings quiet luxury into your everyday.</p>
+        <a href="#" class="btn-primary">Shop the edit →</a>
+      </div>
+      <div class="hero-image">
+        <img src="https://picsum.photos/id/176/600/500" alt="Minimalist ceramic and linen decor">
+        <!-- using picsum for high-quality placeholder imagery that embodies artisan/unique style -->
+      </div>
+    </div>
+
+    <!-- featured collection -->
+    <div>
+      <h2 class="section-title">Featured vessels & rituals</h2>
+      <div class="product-grid">
+        <!-- product 1 -->
+        <div class="product-card">
+          <img class="product-img" src="https://picsum.photos/id/20/400/450" alt="Alabaster light object">
+          <div class="product-info">
+            <div class="product-category">Lumina Sculpt</div>
+            <div class="product-title">Haze Alabaster Lamp</div>
+            <div class="product-price">$289</div>
+            <div class="rating">★★★★☆</div>
+          </div>
+        </div>
+        <!-- product 2 -->
+        <div class="product-card">
+          <img class="product-img" src="https://picsum.photos/id/127/400/450" alt="Ceramic aroma vessel">
+          <div class="product-info">
+            <div class="product-category">Aroma Stone</div>
+            <div class="product-title">Ember & Clay Diffuser</div>
+            <div class="product-price">$124</div>
+            <div class="rating">★★★★★</div>
+          </div>
+        </div>
+        <!-- product 3 -->
+        <div class="product-card">
+          <img class="product-img" src="https://picsum.photos/id/91/400/450" alt="Handwoven wall tapestry">
+          <div class="product-info">
+            <div class="product-category">Textile Art</div>
+            <div class="product-title">Woven Silence Tapestry</div>
+            <div class="product-price">$345</div>
+            <div class="rating">★★★★☆</div>
+          </div>
+        </div>
+        <!-- product 4 -->
+        <div class="product-card">
+          <img class="product-img" src="https://picsum.photos/id/28/400/450" alt="Sculptural candle set">
+          <div class="product-info">
+            <div class="product-category">Ritual Edit</div>
+            <div class="product-title">Dusk Trilogy Candles</div>
+            <div class="product-price">$98</div>
+            <div class="rating">★★★★★</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- unique branding story segment: "LUMINAIR philosophy" -->
+    <div class="brand-story">
+      <div class="story-text">
+        <h3>LUMINAIR — the poetry of slow making</h3>
+        <p>Rooted in the wabi-sabi tradition and contemporary minimalism, every LUMINAIR piece is shaped by artisans who honour natural materials — raw alabaster, hand-thrown ceramics, organic linens. We don't follow seasons; we follow silence, texture, and the warmth of light.</p>
+        <p><strong>✦ Designed in Stockholm, crafted between Kyoto & Oaxaca.</strong></p>
+        <a href="#" style="color:#b87c4b; font-weight:600; text-decoration:none;">Read the manifesto →</a>
+      </div>
+      <div class="story-img">
+        <img src="https://picsum.photos/id/219/300/320" alt="artisan hands shaping clay">
+      </div>
+    </div>
+
+    <!-- additional collection row / second product set -->
+    <h2 class="section-title">New arrivals — lunar edit</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img class="product-img" src="https://picsum.photos/id/29/400/450" alt="Minimalist moon jar">
+        <div class="product-info">
+          <div class="product-category">Ceramics</div>
+          <div class="product-title">Moon Jar, small</div>
+          <div class="product-price">$172</div>
+          <div class="rating">★★★★☆</div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img class="product-img" src="https://picsum.photos/id/84/400/450" alt="Marble tray set">
+        <div class="product-info">
+          <div class="product-category">Atelier object</div>
+          <div class="product-title">Terra Marble Tray</div>
+          <div class="product-price">$210</div>
+          <div class="rating">★★★★★</div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img class="product-img" src="https://picsum.photos/id/96/400/450" alt="Linen aromatherapy pillow">
+        <div class="product-info">
+          <div class="product-category">Home Ritual</div>
+          <div class="product-title">Linen Lavender Pillow</div>
+          <div class="product-price">$79</div>
+          <div class="rating">★★★★☆</div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img class="product-img" src="https://picsum.photos/id/166/400/450" alt="Incense holder set">
+        <div class="product-info">
+          <div class="product-category">Incense</div>
+          <div class="product-title">Koh Holder + Hinoki</div>
+          <div class="product-price">$54</div>
+          <div class="rating">★★★★★</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- newsletter + brand immersion -->
+    <div class="newsletter">
+      <h4>✦ The Luminairessence ✦</h4>
+      <p>Join our journal — slow living notes, early access, and stories from the kiln.</p>
+      <div class="news-form">
+        <input type="email" placeholder="your email address" aria-label="email">
+        <button>Subscribe</button>
+      </div>
+      <p style="font-size: 0.7rem; margin-top: 20px; color:#e2cfbc;">No spam, only quiet inspirations.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; width: 100%; gap: 28px;">
+    <div class="footer-col">
+      <div class="brand" style="margin-bottom: 10px;">
+        <span class="brand-name" style="font-size: 1.8rem;">LUMINAIR</span>
+      </div>
+      <p>Ethereal objects & interior rituals.<br>© 2025 — all shadows reserved.</p>
+    </div>
+    <div class="footer-col">
+      
+  </div>
+</footer>
+
+<!-- simple interactive message for demo (non-intrusive) -->
+<script>
+  // subtle UX: just console greeting & newsletter alert preview (non blocking)
+  const subBtn = document.querySelector('.news-form button');
+  if(subBtn) {
+    subBtn.addEventListener('click', function(e){
+      e.preventDefault();
+      const emailInput = document.querySelector('.news-form input');
+      if(emailInput && emailInput.value.trim() !== '' && emailInput.value.includes('@')) {
+        alert(`✨ Thank you, we'll send whispers of LUMINAIR to ${emailInput.value}`);
+        emailInput.value = '';
+      } else if(emailInput) {
+        alert('Please enter a valid email to receive our luminous journal.');
+      } else {
+        alert('Join the LUMINAIR circle — feel free to explore the collection.');
+      }
+    });
+  }
+  // add hover micro-effect on product cards additional (already handled by CSS)
+  console.log('LUMINAIR — unique home for ethereal living');
+</script>
+</body>
+</html>
